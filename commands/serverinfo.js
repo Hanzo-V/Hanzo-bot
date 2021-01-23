@@ -16,7 +16,6 @@ const Nm = msg.guild.memberCount;
 let Serve = new Discord.MessageEmbed()
 .setTitle(`${msg.guild.name}`)
 .setThumbnail(msg.guild.iconURL())
-.setDescription('**Informações do servidor.**')
 .addField('**Dono:**', `${msg.guild.owner.user.username}#${msg.guild.owner.user.discriminator}`)
 .addField(`**ID do servidor:**`, GuildID)
 .addField(`**Números de canais:**`, Channels, true)
@@ -27,5 +26,5 @@ let Serve = new Discord.MessageEmbed()
 .setColor('#021f66')
 .setTimestamp();
   
-msg.channel.send(Serve)
+msg.channel.send(`${msg.author} aqui esta as informações deste servidor:`,Serve)
 };

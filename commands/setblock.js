@@ -15,7 +15,7 @@ if(!Blocked){
     } catch(err){
         console.error(err)
     };
-    return msg.reply(`Eu não achei o cargo de bloqueio, mas eu criei um para facilitar =)`).then(msg => msg.delete({timeout : 1000 * 3}));
+    msg.reply(`Eu não achei o cargo de bloqueio, mas eu criei um para facilitar =)`).then(msg => msg.delete({timeout : 1000 * 3}));
 };
 if(!msg.member.hasPermission(config.ADM)) return msg.delete(`**Você não tem permissão de usar este comando.**`).then(msg => msg.delete({timeout : 1000 * 3}));
 if(!User) return msg.reply(`Merencione alguem para bloquear de usar comandos.`).then(msg => msg.delete({timeout : 1000 * 3}));

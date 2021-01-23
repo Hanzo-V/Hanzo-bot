@@ -14,15 +14,17 @@ if(!ID) return msg.reply(`**Insira um ID para desbanir**`).then(msg => msg.delet
     .then(()=>{
     const embed = new Discord.MessageEmbed()
     .setTitle(`Membro desbanido!`)
-    .addField(`ID do usuario desbanido:`, ID)
+    .addField(`Usuário desbanido::`, ID)
     .addField(`Desbanido por:`,msg.author)
     .setColor("#01ff4e")
     .setTimestamp();
-    if(!Punições)  msg.reply(embed).then(() => msg.reply(`O canal de punições não foi encontrado, mas o ${ID.user.tag} está desbanido =).`).then(msg => msg.delete({timeout : 1000 * 3}))).then(msg => msg.delete({timeout : 1000 * 3}));
+    if(!Punições) 
+    msg.channel.send(embed).then(() => console.log(`O ${ID} está desbanido do servidor ${client.guild.name}`))
     else Punições.send(embed);
     })
     .catch(err =>{
-        console.error(err).then(() => msg.reply(`**Ouve um erro ao desbanir este usuario**\nErro:${err}`))
+        console.error(err) 
+        msg.reply(`**Ouve um erro ao desbanir este usuario**\nErro:${err}`)
     });
 });
 };

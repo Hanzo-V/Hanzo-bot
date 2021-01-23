@@ -36,6 +36,6 @@ let banembed = new Discord.MessageEmbed()
 .setFooter(' Foi de beise...', client.user.displayAvatarURL())
 .setTimestamp();
 if(Punições) msg.reply(`Sua penalidade foi aplicada no ${User}. `).then(()=> Punições.send(banembed));
-else msg.channel.send(banembed).then(() => msg.reply(`O canal de punições do seu servidor não foi encontrado, mas o membro foi banido com sucesso`).then(msg => msg.delete({timeout : 1000 * 3})));
+else msg.channel.send(banembed).then(() => msg.reply(`O canal de punições do seu servidor não foi encontrado, mas o membro foi banido com sucesso.`).then(msg => msg.delete({timeout : 1000 * 3})));
 }).catch(err=> msg.reply(`Ocorreu um erro\nErro:"**${err}**"`).then(()=> console.error(err)));
 };
